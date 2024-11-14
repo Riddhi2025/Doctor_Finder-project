@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link href="../static/assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+    <h1 data-aos="fade-up">Search Hospital Here</h1>
+    <h3 data-aos="fade-up" data-aos-delay="100">Find a Hospital Wherever You Are!!!</h3>
+    <form action="search_hospital" method="post" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200"><br/>
+    <input type="text" required class="form-control" name="T1" placeholder="Enter your CitY"/><br/><br/>
+    <input type="text" required class="form-control" name="T2" placeholder="Enter your State"/><br/><br/>
+    <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+{% if msg %}
+<h2 style="color:#F00;"> {{msg}} </h2>
+{% endif %}
+</div>
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form</title>
+    <link rel="stylesheet" href="../static/css/login_style.css">
+    <script src="https://kit.fontawesome.com/97ebdf5864.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-image: url(../static/assets/img/login_image2.avif);">
+
+    <div class="container">
+        <h2>Login</h2>
+
+        <form method="post" action="login">
+
+            <div class="form-group">
+                <input type="email"  name="T1" required>
+                <label for="">Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="T2" required>
+                <label for="">Password</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <p><a href="#">Forget Password</a></p>
+
+            <input id="btn" type="submit" value="Login">
+
+        </form>
+
+        {% if msg %}
+        <h4 style="color:#f00;">{{msg}}</h4>
+        {% endif %}
+    </div>
+
+</body>
+</html>

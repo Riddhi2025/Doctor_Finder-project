@@ -1,0 +1,30 @@
+<html>
+<body>
+<h1 align="center" style="color:B00;">Admin Data</h1>
+<h2 style="float:left;">
+    <a href="admin_home">Home</a>
+</h2>
+{% if v %}
+<table border="2" width="100%">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Email</th>
+    </tr>
+    {% for d in v %}
+        <tr align="center">
+            <td>{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+            <td>{{d[2]}}</td>
+            <td>{{d[3]}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+</body>
+</html>

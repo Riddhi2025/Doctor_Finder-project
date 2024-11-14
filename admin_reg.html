@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1> Admin Registration </h1>
+<form method="post" action="admin_reg">
+    <h3>Name: <input aria-required="true" type="text" name="T1" id="txt1" required /></h3>
+    <h3>Address: <input aria-required="true" type="text" name="T2" id="txt2" required /></h3>
+    <h3>Contact: <input aria-required="true" type="text" name="T3" id="txt3" required /></h3>
+    <h3>Email: <input aria-required="true" type="text" name="T4" id="txt4" required /></h3>
+    <h3>Password: <input aria-required="true" type="text" name="T5" id="txt5" required /></h3>
+    <h3>Confirm Password: <input aria-required="true" type="text" name="T6" id="txt6" required /></h3>
+    <p><input type="submit" name="B1" value="Register" /></p>
+</form>
+
+{% if msg %}
+<h2 style="color:#F00;"> {{msg}} </h2>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

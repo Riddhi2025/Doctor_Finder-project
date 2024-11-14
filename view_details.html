@@ -1,0 +1,64 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1> Doctor Details </h1>
+{% if v %}
+<form method="post" action="">
+    <p>Doctor Id: {{v[9]}} </p>
+    <p>Name: {{v[0]}} </p>
+    <p>Address: {{v[1]}} </p>
+    <p>Contact: {{v[2]}} </p>
+    <p>Speciality: {{v[3]}} </p>
+    <p>Working Experience: {{v[4]}} </p>
+    <p>Current Hospital: {{v[5]}} </p>
+    <p>Morning Shift: {{v[6]}} </p>
+    <p>Evening Shift: {{v[7]}} </p>
+    <p>City: {{city}} </p>
+    <p>State: {{state}} </p>
+    <p>Days:
+        {% if v[10]=="yes" %}
+        mon<input readonly checked type="checkbox" id="txt7" name="T10" value="mon">
+        {% endif %}
+
+        {% if v[11]=="yes" %}
+        tue<input readonly checked type="checkbox" id="txt9" name="T10" value="tue">
+        {% endif %}
+
+        {% if v[12]=="yes" %}
+        wed<input readonly checked type="checkbox" id="txt11" name="T10" value="wed">
+        {% endif %}
+
+        {% if v[13]=="yes" %}
+        thur<input readonly checked type="checkbox" id="txt13" name="T10" value="thur">
+        {% endif %}
+
+        {% if v[14]=="yes" %}
+        fri<input readonly checked type="checkbox" id="txt15" name="T10" value="fri">
+        {% endif %}
+
+        {% if v[15]=="yes" %}
+        sat<input readonly checked type="checkbox" id="txt17" name="T10" value="sat">
+        {% endif %}
+
+        {% if v[16]=="yes" %}
+        sun<input readonly checked type="checkbox" id="txt19" name="T10" value="sun">
+        {% endif %}
+
+    </p>
+    <p>Email: {{v[8]}} </p>
+    <input type="hidden" name="H1" value="{{v[9]}}" />
+    <button type="submit" class="get-a-quote" name="B1">Take Appointment</button>
+</form>
+
+{% elif msg %}
+    <h2 style="color:#F00;"> {{msg}} </h2>
+    <p><a href="/">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

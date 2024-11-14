@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1> Edit and Save </h1>
+{% if v %}
+<form method="post" action="edit_hospital_data1">
+    <p>Name: <input value="{{ v[0] }}" type="text" id="txt1" name="T1"/> </p>
+    <p>Licence No.: <input value="{{ v[1] }}" type="text" id="txt2" name="T2"/> </p>
+    <p>Address: <input value="{{ v[2] }}" type="text" id="txt3" name="T3"/> </p>
+    <p>City: <input value="{{ v[3] }}" type="text" id="txt4" name="T4"/> </p>
+    <p>State: <input value="{{ v[4] }}" type="text" id="txt5" name="T5"/> </p>
+    <p>Emergency Contact: <input value="{{ v[5] }}" type="text" id="txt6" name="T6"/> </p>
+    <p>PPN/NON PPN: <input value="{{ v[6] }}" type="text" id="txt7" name="T7"/> </p>
+    <p>General Beds: <input value="{{ v[7] }}" type="text" id="txt8" name="T8"/> </p>
+    <p>AC Beds: <input value="{{ v[8] }}" type="text" id="txt9" name="T9"/> </p>
+    <p>Email: <input readonly value="{{ v[9] }}" type="text" id="txt10" name="T10"/> </p>
+    <button type="submit" id="btn1" name="B1">Save Changes</button>
+</form>
+
+{% elif msg %}
+    <h2 style="color:#F00;"> {{msg}} </h2>
+    <p><a href="show_hospital_admin">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

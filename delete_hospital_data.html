@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1> Delete Data </h1>
+{% if v %}
+<form method="post" action="delete_hospital_data1">
+    <p>Name: {{v[0]}} </p>
+    <p>Licence No.: {{v[1]}} </p>
+    <p>Address: {{v[2]}} </p>
+    <p>City: {{v[3]}} </p>
+    <p>State: {{v[4]}} </p>
+    <p>Emergency Contact: {{v[5]}} </p>
+    <p>PPN/NON PPN: {{v[6]}} </p>
+    <p>General Beds: {{v[7]}} </p>
+    <p>AC Beds: {{v[8]}} </p>
+    <p>Email: {{v[9]}} </p>
+    <input type="hidden" name="H1" value="{{v[9]}}" />
+    <button type="submit" id="btn1" name="B1">Delete</button>
+</form>
+
+{% elif msg %}
+    <h2 style="color:#F00;"> {{msg}} </h2>
+    <p><a href="show_hospital_admin">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

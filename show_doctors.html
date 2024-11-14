@@ -1,0 +1,59 @@
+<h1 align="center" style="color:B00;">Doctors Data</h1>
+<h2 style="float:left;">
+    <a href="hospital_home" style="margin-top:10px;">Home</a>
+</h2>
+
+{% if v %}
+    {% for d in v %}
+        <div style="margin-top:80px; border:2px solid #0A5; width:300px; float:left;">
+        <div align="center">
+        <h3>{{ d[0] }}</h3>
+        <div>
+            address: {{ d[1] }}<br/>
+            contact: {{ d[2] }}<br/>
+            speciality: {{ d[3] }}<br/>
+            working experience: {{ d[4] }}<br/>
+            current hospital: {{ d[5] }}<br/>
+            days: {% if d[10]=="yes" %}
+                mon
+            {% endif %}
+            {% if d[11]=="yes" %}
+                tue
+            {% endif %}
+            {% if d[12]=="yes" %}
+                wed
+            {% endif %}
+            {% if d[13]=="yes" %}
+                thur
+            {% endif %}
+            {% if d[14]=="yes" %}
+                fri
+            {% endif %}
+            {% if d[15]=="yes" %}
+                sat
+            {% endif %}
+            {% if d[16]=="yes" %}
+                sun
+            {% endif %}
+            <br/>
+            Morning shift: {{ d[6] }}<br/>
+            Evening shift: {{ d[7] }}<br/>
+            Email: {{ d[8] }}<br/>
+            Doctor Id: {{ d[9] }}<br/>
+            <br/>
+            <form method="post" action="edit_doctor">
+                <input type="hidden" name="H1" value="{{ d[9] }}"/>
+                <input type="submit" value="Edit"/>
+            </form>
+            <form method="post" action="delete_doctor">
+                <input type="hidden" name="H1" value="{{ d[9] }}"/>
+                <input type="submit" value="Delete"/>
+            </form>
+        </div>
+        </div>
+        </div>
+{% endfor %}
+
+{% elif msg %}
+    <h3>{{ msg }}</h3>
+{% endif %}

@@ -1,0 +1,56 @@
+<html>
+<body>
+<h1 align="center" style="color:B00;">Admin Data</h1>
+<h2 style="float:left;">
+    <a href="admin_home">Home</a>
+</h2>
+{% if v %}
+<table border="2" width="100%">
+    <tr>
+        <th>Name</th>
+        <th>License No</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Emergency Contact</th>
+        <th>PPN/NON PPN</th>
+        <th>General Beds</th>
+        <th>AC Beds</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for d in v %}
+        <tr align="center">
+            <td> {{d[0]}} </td>
+            <td> {{d[1]}} </td>
+            <td> {{d[2]}} </td>
+            <td> {{d[3]}} </td>
+            <td> {{d[4]}} </td>
+            <td> {{d[5]}} </td>
+            <td> {{d[6]}} </td>
+            <td> {{d[7]}} </td>
+            <td> {{d[8]}} </td>
+            <td> {{d[9]}} </td>
+            <td>
+                <form method="post" action="edit_hospital_data">
+                    <input type="hidden" name="H1" value="{{ d[9] }}"/>
+                    <input type="submit" value="Edit"/>
+                </form>
+            </td>
+            <td>
+                 <form method="post" action="delete_hospital_data">
+                    <input type="hidden" name="H1" value="{{ d[9] }}"/>
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+</body>
+</html>

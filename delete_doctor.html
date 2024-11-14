@@ -1,0 +1,76 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1> Delete Data </h1>
+{% if v %}
+<form method="post" action="delete_doctor1">
+    <p>Doctor Id: {{v[9]}} </p>
+    <p>Name: {{v[0]}} </p>
+    <p>Address: {{v[1]}} </p>
+    <p>Contact: {{v[2]}} </p>
+    <p>Speciality: {{v[3]}} </p>
+    <p>Working Experience: {{v[4]}} </p>
+    <p>Current Hospital: {{v[5]}} </p>
+    <p>Morning Shift: {{v[6]}} </p>
+    <p>Evening Shift: {{v[7]}} </p>
+    <p>Days:
+        {% if v[10]=="yes" %}
+        mon<input readonly checked type="checkbox" id="txt7" name="T10" value="mon">
+        {% else %}
+        mon<input readonly type="checkbox" id="txt8" name="T10" value="mon">
+        {% endif %}
+
+        {% if v[11]=="yes" %}
+        tue<input readonly checked type="checkbox" id="txt9" name="T10" value="tue">
+        {% else %}
+        tue<input readonly type="checkbox" id="txt10" name="T10" value="tue">
+        {% endif %}
+
+        {% if v[12]=="yes" %}
+        wed<input readonly checked type="checkbox" id="txt11" name="T10" value="wed">
+        {% else %}
+        wed<input readonly type="checkbox" id="txt12" name="T10" value="wed">
+        {% endif %}
+
+        {% if v[13]=="yes" %}
+        thur<input readonly checked type="checkbox" id="txt13" name="T10" value="thur">
+        {% else %}
+        thur<input readonly type="checkbox" id="txt14" name="T10" value="thur">
+        {% endif %}
+
+        {% if v[14]=="yes" %}
+        fri<input readonly checked type="checkbox" id="txt15" name="T10" value="fri">
+        {% else %}
+        fri<input readonly type="checkbox" id="txt16" name="T10" value="fri">
+        {% endif %}
+
+        {% if v[15]=="yes" %}
+        sat<input readonly checked type="checkbox" id="txt17" name="T10" value="sat">
+        {% else %}
+        sat<input readonly type="checkbox" id="txt18" name="T10" value="sat">
+        {% endif %}
+
+        {% if v[16]=="yes" %}
+        sun<input readonly checked type="checkbox" id="txt19" name="T10" value="sun">
+        {% else %}
+        sun<input readonly type="checkbox" id="txt20" name="T10" value="sun">
+        {% endif %}
+
+    </p>
+    <p>Email: {{v[8]}} </p>
+    <input type="hidden" name="H1" value="{{v[9]}}" />
+    <button type="submit" id="btn1" name="B1">Delete</button>
+</form>
+
+{% elif msg %}
+    <h2 style="color:#F00;"> {{msg}} </h2>
+    <p><a href="show_doctors">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1>Doctor Registration</h1>
+<form method="post" id="form1" name="form1" action="doctor_reg">
+    <p>Name: <input type="text" id="txt1" name="T1"/></p>
+    <p>Address: <input type="text" id="txt2" name="T2"/></p>
+    <p>Contact: <input type="text" id="txt3" name="T3"/></p>
+    <p>Speciality:
+    <select id="txt4" name="T4">
+        <option>Cardiologist</option>
+        <option>Cardiovascular Surgeon</option>
+        <option>Dentist</option>
+        <option>Emergency Doctors</option>
+        <option>ENT Specialist</option>
+        <option>Gastroenterologist</option>
+        <option>General Psychiatrist</option>
+    </select>
+  </p>
+    <p>Working Experience: <input type="text" id="txt5" name="T5"/></p>
+    <p>Current Hospital: <input type="text" id="txt6" name="T6"/></p>
+    <p>Days:
+        Monday: <input type="checkbox" id="txt10" name="T7" value="mon"/>
+        Tuesday: <input type="checkbox" id="txt11" name="T7" value="tue"/>
+        Wednesday: <input type="checkbox" id="txt12" name="T7" value="wed"/>
+        Thursday: <input type="checkbox" id="txt13" name="T7" value="thur"/>
+        Friday: <input type="checkbox" id="txt14" name="T7" value="fri"/>
+        Saturday: <input type="checkbox" id="txt15" name="T7" value="sat"/>
+        Sunday: <input type="checkbox" id="txt16" name="T7" value="sun"/>
+    </p>
+    <p>Timings: Morning Shift: <input type="text" id="txt8" name="T8"/>
+        <br/>
+        <br/>
+        Evening Shift: <input type="text" id="txt9" name="T9"/>
+    </p>
+    <p>Email: <input type="text" id="txt7" name="T10"/></p>
+    <button id="btn1" value="submit" name="B1">Register</button>
+</form>
+
+{% if msg %}
+<h2 style="color:#F00;"> {{msg}} </h2>
+<p><a href="hospital_home">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

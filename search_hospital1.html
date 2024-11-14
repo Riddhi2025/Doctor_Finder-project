@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:1100px; text-align:center;">
+
+{% if v %}
+
+<h1 align="center" style="color:B00;">Hospitals Data After Search</h1>
+<h2 style="float:left;">
+    <a href="/" style="margin-top:10px;">Home</a>
+</h2>
+
+{% for d in v %}
+        <div style="margin-top:80px; border:2px solid #0A5; width:300px; float:left;">
+        <div align="center">
+        <h3>{{ d[0] }}</h3>
+        <div>
+            Licence No: {{ d[1] }}<br/>
+            Address : {{ d[2] }}<br/>
+            City: {{ d[3] }}<br/>
+            State: {{ d[4] }}<br/>
+            Contact: {{ d[5] }}<br/>
+            PPN/NON-PPN: {{ d[6] }}<br/>
+            General Beds: {{ d[7] }}<br/>
+            AC Beds: {{ d[8] }}<br/>
+            Email: {{ d[9] }}<br/>
+            <br/>
+            <form method="post" action="view_details">
+                <input type="hidden" name="H0" value="{{d[0]}}"/>
+                <input type="hidden" name="H1" value="{{d[1]}}"/>
+                <input type="hidden" name="H2" value="{{d[6]}}"/>
+                <input type="submit" value="Free Chat"/>
+            </form>
+        </div>
+        </div>
+        </div>
+{% endfor %}
+
+{% elif msg %}
+    <h3 style="color:#F00;">{{ msg }}</h3>
+        <p><a href="">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

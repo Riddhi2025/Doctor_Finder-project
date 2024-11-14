@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+<div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1>Hospital Registration</h1>
+<form method="post" id="form1" name="form1" action="hospital_reg">
+    <h3>Name: <input required type="text" id="txt1" name="T1"/> </h3>
+    <h3>Licence No.: <input required type="text" id="txt2" name="T2"/> </h3>
+    <h3>Address: <input required type="text" id="txt3" name="T3"/> </h3>
+    <h3>City: <input required type="text" id="txt4" name="T4"/> </h3>
+    <h3>State: <input required type="text" id="txt5" name="T5"/> </h3>
+    <h3>Emergency Contact: <input required type="text" id="txt6" name="T6"/> </h3>
+    <h3>PPN/NON PPN: <input required type="text" id="txt7" name="T7"/> </h3>
+    <h3>General Beds: <input required type="text" id="txt8" name="T8"/> </h3>
+    <h3>AC Beds: <input required type="text" id="txt9" name="T9"/> </h3>
+    <h3>Email: <input required type="text" id="txt10" name="T10"/> </h3>
+    <h3>Password: <input required type="text" id="txt11" name="T11"/> </h3>
+    <h3>Confirm Password: <input required type="text" id="txt12" name="T12"/> </h3>
+    <button id="btn1" value="submit" name="B1">Register</button>
+</form>
+
+{% if msg %}
+    <h2 style="color:#F00;"> {{msg}} </h2>
+    <p><a href="admin_home">Continue</a></p>
+{% endif %}
+</div>
+</center>
+</body>
+</html>

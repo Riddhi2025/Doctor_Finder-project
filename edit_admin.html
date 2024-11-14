@@ -1,0 +1,19 @@
+<h1 style="background-color: #5846f9; text-align:center; color: #FFF;">Doctor Finder</h1>
+<center>
+    <div style="border: 3px solid #000; width:600px; text-align:center;">
+<h1>Edit and Save</h1>
+{% if v %}
+<form method="post" action="edit_admin1">
+    <p>Name: <input value="{{v[0]}}" type="text" id="txt1" name="T1"/></p>
+    <p>Address: <input value="{{v[1]}}" type="text" id="txt2" name="T2"/></p>
+    <p>Contact: <input value="{{v[2]}}" type="text" id="txt3" name="T3"/></p>
+    <p>Email: <input readonly value="{{v[3]}}" type="text" id="txt4" name="T4"/></p>
+    <button type="submit" id="btn1" name="B1">Save changes</button>
+</form>
+
+{% elif msg %}
+    <h2 style="color:#F00;">{{ msg }}</h2>
+        <p><a href="admin_home">Continue</a></p>
+{% endif %}
+</div>
+</center>
